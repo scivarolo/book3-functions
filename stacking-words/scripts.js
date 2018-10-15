@@ -31,15 +31,20 @@ function addExcitement(theWordArray) {
 // Invoke the function and pass in the array
 addExcitement(sentence);
 
-function addExcitementThirdly(theWordArray) {
+function addExcitementThirdly(theWordArray, punctuation) {
   let buildMeUpThirdly = "";
 
   for (let i = 0; i < theWordArray.length; i++) {
     buildMeUpThirdly += theWordArray[i];
+    
+    //If punctuation isn't specified, default to exclamation
+    if (!punctuation) {
+      punctuation = "!";
+    }
 
-    //Add exclamation after every third word. If not, add a space.
+    //Add punctuation after every third word. Add a space after all others, except last.
     if (i % 3 === 0 && i != 0) {
-      buildMeUpThirdly += "!";
+      buildMeUpThirdly += punctuation;
     } else {
       if(i === theWordArray.length - 1) {
         //add nothing
@@ -52,4 +57,4 @@ function addExcitementThirdly(theWordArray) {
 
 }
 
-addExcitementThirdly(sentence);
+addExcitementThirdly(sentence, "?");
