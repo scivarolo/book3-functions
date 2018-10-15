@@ -13,8 +13,16 @@ function addExcitement(theWordArray) {
 
     for (let i = 0; i < theWordArray.length; i++) {
         // Concatenate the new word onto buildMeUp
+        buildMeUp += theWordArray[i];
 
+        // Add a space after unless its the last word in the array, then add an "!"
+        if(i == theWordArray.length - 1) {
+          buildMeUp += "!";
+        } else {
+          buildMeUp += " ";
+        }
         // Print buildMeUp to the console
+        console.log(buildMeUp);
     }
 
 }
